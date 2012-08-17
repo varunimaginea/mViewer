@@ -8,6 +8,7 @@
 <script type="text/javascript" src="lib/yui/build/yui/yui.js"></script>
 <LINK REL="SHORTCUT ICON" HREF="images/icon.png">
 <link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="lib/jQuery/jquery-1.7.2.js"></script>
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/utility.js"></script>
 <link rel="stylesheet" type="text/css"
@@ -17,18 +18,24 @@
 <script src="lib/yui2/build/animation/animation-min.js"></script>
 <script src="lib/yui2/build/element/element-min.js"></script>
 <script src="lib/yui2/build/button/button-min.js"></script>
+<script type="text/javascript" src="js/applicationVersion.js"></script>
 <!-- Source file -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            GetApplicationVersion.initialize();
+        });
+    </script>
 <script src="lib/yui2/build/container/container-min.js"></script>
 </head>
 <body class="login">
 	<center>
-
+        <div class="version" id="versionMsg"></div>
 		<img src="images/index_logo.png" alt="logo" align="center" id="logo">
-		
+
 		<br>
 		<fieldset id="field" class="login">
 			<legend align="center">Login Details</legend>
-			<br/> 
+			<br/>
             <div id="helpDiv" class="loginHelp" >
               <a href="http://imaginea.github.com/mViewer/" target="_blank">Help</a>
             </div>

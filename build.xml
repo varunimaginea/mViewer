@@ -71,7 +71,7 @@
 	</target>
 
 	<!-- compile -->
-	<target name="compile" depends="init">
+	<target name="compile" depends="init, update-version">
 		<mkdir dir="${classes.dir}" />
 		<javac srcdir="${java.src.dir}" destdir="${classes.dir}" classpathref="compile.class.path" nowarn="yes" debug="yes" includeantruntime="false">
 			<!-- <compiler arg value="-Xlint:unchecked"/> -->
@@ -84,6 +84,11 @@
 		</javac>
 	</target>
 
+    <!-- application Version-->
+    <target name="update-version">
+            <replaceregexp file="${src.dir}/main/java/com/imaginea/mongodb/utils/ApplicationVersion.java"
+                           match="APP_VERSION_VALUE" replace="${app.version}" />
+    </target>
 
 	<!-- jar -->
 	<target name="jar">
